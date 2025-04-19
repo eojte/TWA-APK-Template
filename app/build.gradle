@@ -55,6 +55,7 @@ android {
         targetSdkVersion 32
         versionCode 1
         versionName "1.0.0.0"
+        resValue "string", "defaultUrl", "https://eojte.github.io/Pwa/"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
