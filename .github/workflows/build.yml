@@ -1,0 +1,35 @@
+name: Build APK
+
+on:
+  push:
+    branches:
+      - main  # Set to the branch you are working with (e.g., 'main')
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # GitHub uses Ubuntu runners to run builds
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2  # This checks out your code to the runner
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'  # Set the Java version that matches your Android project
+
+    - name: Set up Android SDK
+      uses: r0adkll/travis-android-sdk@v3
+      with:
+        sdk-version: "30"  # Set the SDK version you need (update as needed)
+
+    - name: Build APK
+      run: |
+        ./gradlew clean assembleRelease  # This runs the Gradle command to build the APK
+
+    - name: Upload APK to GitHub Releases
+      uses: softprops/action-gh-release@v1
+      with:
+        files: app/build/outputs/apk/release/app-release.apk  # Path to the APK file after build
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # This token is automatically available in GitHub Actions
