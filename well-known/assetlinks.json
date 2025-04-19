@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.eojte.twaDS",  // Your application ID
+      "sha256_cert_fingerprints": [
+        "DF:28:97:56:79:A5:4B:C2:DE:FD:C1:DB:1A:E4:DA:A4:5C:9A:A4:C6:D4:D4:5B:12:55:87:32:F5:B1:03:FF:04"
+      ]
+    }
+  }
+]
