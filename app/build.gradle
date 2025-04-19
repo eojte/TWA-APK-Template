@@ -19,7 +19,7 @@ plugins {
 }
 
 def twaManifest = [
-    applicationId: 'com.mywebsite.twa',
+    applicationId: 'com.eojte.twaDS',
     hostName: 'pictroom.com', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
     name: 'My Website', // The application name.
